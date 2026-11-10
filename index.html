@@ -3,57 +3,160 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<title>Destrava Conversas · Diálogos honestos nos aproximam</title>
-<meta name="description" content="Diálogos honestos nos aproximam. Iniciativas para destravar conversas, com fontes que qualquer pessoa pode checar.">
+<link rel="icon" href="/assets/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon-192.png">
+<title>Destrava Conversas · Argumentos e ferramentas para as conversas acontecerem</title>
+<meta name="description" content="Painéis, decks e ferramentas para destravar conversas: facilitação, conversas difíceis, mediação e comunicação não violenta.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Destrava Conversas · Diálogos honestos nos aproximam">
-<meta property="og:description" content="Precisamos falar. Iniciativas para destravar conversas, com fontes que qualquer pessoa pode checar.">
-<meta name="theme-color" content="#0F2440">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&amp;family=Public+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<meta property="og:title" content="Destrava Conversas">
+<meta property="og:description" content="Argumentos e ferramentas para as conversas acontecerem.">
+<meta property="og:image" content="https://destrava-conversas.com.br/assets/dc-logo.png">
+<meta name="theme-color" content="#191919">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;800&amp;display=swap" rel="stylesheet">
 <style>
-:root{--ground:#EEF1F4;--surface:#FFFFFF;--ink:#1A2430;--muted:#4A5663;--line:#D3DAE1;--brand:#0F2440;--accent:#1A73C8;--accent-ink:#1560A8}
-@media (prefers-color-scheme:dark){:root{--ground:#11181F;--surface:#1A232D;--ink:#E8EDF2;--muted:#A9B5C1;--line:#2E3A46;--accent:#4A9BE8;--accent-ink:#7DB8F0}}
+:root{--bg:#191919;--bg2:#222222;--ink:#f4f2ec;--muted:#c9c6be;--muted2:#b9b5ac;--line:#333333;--amarelo:#ffed00;--violeta:#ac00ff;--lilas:#d9a3ff}
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%}
-body{background:var(--ground);color:var(--ink);font-family:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.55;display:flex;flex-direction:column;min-height:100vh}
-.top{background:var(--brand);color:#fff;padding:18px max(16px,env(safe-area-inset-left))}
-.top .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:12px}
-.top img{width:34px;height:34px;border-radius:8px;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
-.brand{font-family:'Bricolage Grotesque','Public Sans',system-ui,sans-serif;font-weight:800;font-size:21px;letter-spacing:-.01em}
-main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:clamp(40px,9vh,96px) 16px 48px}
-.kick{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink);border:1.5px solid var(--accent);border-radius:999px;padding:4px 12px;margin:0 0 22px}
-h1{font-family:'Bricolage Grotesque','Public Sans',system-ui,sans-serif;font-weight:800;font-size:clamp(40px,8vw,72px);line-height:1.02;letter-spacing:-.02em;margin:0 0 20px}
-.lead{font-size:clamp(18px,2.4vw,22px);color:var(--muted);max-width:34em;margin:0}
-h2{font-family:'Bricolage Grotesque','Public Sans',system-ui,sans-serif;font-weight:600;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:56px 0 14px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
-.card{display:block;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:14px;padding:18px 20px;color:inherit;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(15,36,64,.12)}
-.card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.card b{display:block;font-family:'Bricolage Grotesque','Public Sans',system-ui,sans-serif;font-weight:800;font-size:21px;margin-bottom:4px}
-.card span{display:block;font-size:15.5px;color:var(--muted)}
-.card i{display:inline-block;margin-top:10px;font-style:normal;font-weight:600;font-size:15px;color:var(--accent-ink)}
-.card .eye{display:inline-flex;align-items:center;justify-content:center;width:64px;height:40px;border-radius:10px;background:#0A1A3F;margin:0 0 12px}
-.card .eye span{width:44px;height:24px;border-radius:22px/12px;border:3px solid #A6F36A;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
-.card .eye span::after{content:"";width:12px;height:12px;border-radius:50%;background:#A6F36A}
-footer{max-width:760px;width:100%;margin:0 auto;padding:20px 16px 32px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
-footer a{color:inherit}
-@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--amarelo)}a:hover{color:#fff}
+a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px;border-radius:8px}
+.w{max-width:1180px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right))}
+header.w{padding-top:24px;padding-bottom:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+header img{width:72px;height:72px;object-fit:contain;display:block}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav a{text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;padding:10px 16px;border-radius:999px;border:1.5px solid #3a3a3a}
+nav a:hover{border-color:var(--amarelo);color:var(--amarelo)}
+.hero{padding-top:40px;padding-bottom:72px;display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.hero .txt{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.kick{margin:0;font-weight:800;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--amarelo)}
+h1{margin:0;font-weight:800;font-size:clamp(36px,5.6vw,64px);line-height:1.04;letter-spacing:-.025em;max-width:16ch}
+.lead{margin:0;font-size:19px;line-height:1.55;max-width:56ch;color:var(--muted)}
+.hero .foto{flex:1 1 300px;width:380px;max-width:100%;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:center 30%;border-radius:24px;border:4px solid var(--amarelo)}
+h2{margin:0;font-weight:800;font-size:34px;letter-spacing:-.015em}
+.cab{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;justify-content:space-between}
+.selo{font-weight:700;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--amarelo);color:#191919}
+section{display:flex;flex-direction:column;gap:28px}
+#publicas{padding-top:24px;padding-bottom:72px}
+.pub{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.cartao{text-decoration:none;border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .15s ease}
+.cartao:hover{transform:translateY(-2px)}
+.cartao .k{font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.cartao .t{font-weight:800;font-size:24px;line-height:1.15}
+.cartao .d{font-size:16px;line-height:1.5}
+.cartao .ir{margin-top:auto;font-weight:800;font-size:15px}
+.destaque{background:var(--amarelo);color:#191919;padding:34px;grid-column:span 2}
+.destaque .t{font-size:30px;letter-spacing:-.01em}
+.destaque .d{font-size:17px;max-width:54ch}
+.destaque:hover{color:#191919}
+.roxo{background:var(--violeta);color:#fff}
+.roxo .k{color:var(--amarelo)}
+.roxo:hover{color:#fff}
+@media (max-width:700px){.destaque{grid-column:auto}}
+.faixa{background:var(--bg2)}
+#turmas{padding-top:72px;padding-bottom:72px}
+.turmas-cab{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-end;justify-content:space-between}
+.turmas-cab .txt{display:flex;flex-direction:column;gap:10px}
+.turmas-cab p.d{margin:0;font-size:17px;line-height:1.5;color:var(--muted);max-width:58ch}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:var(--violeta);color:#fff;font-weight:800;font-size:16px;padding:16px 24px;border-radius:14px}
+.btn:hover{color:#fff;filter:brightness(1.12)}
+.lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.turma{text-decoration:none;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:8px;min-height:170px}
+.turma:hover{border-color:var(--amarelo);color:var(--ink)}
+.turma .c{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amarelo)}
+.turma .t{font-weight:800;font-size:21px;line-height:1.2}
+.turma .d{font-size:14px;color:var(--muted2)}
+.turma .ir{margin-top:auto;font-weight:800;font-size:14px;color:var(--lilas)}
+.painel{align-self:flex-start;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;padding:12px 18px;border-radius:12px;border:1.5px dashed #555;color:var(--muted)}
+.painel:hover{color:var(--amarelo);border-color:var(--amarelo)}
+#breve{padding-top:64px;padding-bottom:64px;gap:22px}
+#breve h2{font-size:26px}
+.breve{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.breve div{border:1.5px dashed #555;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.breve b{font-weight:800;font-size:18px}
+.breve span{font-size:14px;color:var(--muted2)}
+footer{border-top:1px solid #2e2e2e}
+footer .w{padding-top:36px;padding-bottom:56px;display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font-size:14px;line-height:1.6;color:var(--muted2)}
+@media (prefers-reduced-motion:reduce){.cartao{transition:none}.cartao:hover{transform:none}}
 </style>
 </head>
 <body>
-<header class="top"><div class="in"><img src="/favicon.svg" alt="" width="34" height="34"><span class="brand">Destrava Conversas</span></div></header>
+<header class="w">
+  <a href="/" aria-label="Destrava Conversas, início"><img src="/assets/dc-logo.png" alt="Destrava Conversas" width="72" height="72"></a>
+  <nav aria-label="Seções">
+    <a href="#publicas">Conversas públicas</a>
+    <a href="#turmas">Área das turmas</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+</header>
+
 <main>
-  <h1>Diálogos honestos nos aproximam.</h1>
-  <p class="lead">Precisamos falar. Este espaço reúne iniciativas para destravar conversas, com fontes que qualquer pessoa pode checar.</p>
-  <h2>Já no ar</h2>
-  <div class="cards">
-    <a class="card" href="/observatoriodireitaradical/"><i class="eye" aria-hidden="true"><span></span></i><b>Painel Observatório da Direita Radical e Extrema</b><span>O que governos da direita radical e extrema fazem no poder, ação por ação, com fonte e com o outro lado.</span><i>Abrir painel →</i></a>
-    <a class="card" href="/observatoriodireitaradical/economia/"><b>E a Economia?</b><span>Indicadores dos governos brasileiros lado a lado, com contexto.</span><i>Abrir página →</i></a>
+  <div class="w hero">
+    <div class="txt">
+      <p class="kick">Painéis, decks e ferramentas</p>
+      <h1>Argumentos e ferramentas para as conversas acontecerem.</h1>
+      <p class="lead">Facilitação, conversas difíceis, mediação e comunicação não violenta. Um lugar para o que destrava o diálogo, aberto ou por turma.</p>
+    </div>
+    <img class="foto" src="/assets/ces-palco.jpg" alt="Ces Michelin conduzindo uma palestra no palco, com microfone na mão" width="800" height="1200">
   </div>
+
+  <section id="publicas" class="w" aria-labelledby="t-publicas">
+    <div class="cab"><h2 id="t-publicas">Conversas públicas</h2><span class="selo">Acesso aberto</span></div>
+    <div class="pub">
+      <a class="cartao destaque" href="/observatoriodireitaradical/">
+        <span class="k">Painel · em destaque</span>
+        <span class="t">Painel Observatório da Direita Radical e Extrema</span>
+        <span class="d">O que governos da direita radical e extrema fazem no poder, ação por ação, com fonte e com o outro lado.</span>
+        <span class="ir">Abrir o painel →</span>
+      </a>
+      <a class="cartao roxo" href="/observatoriodireitaradical/economia/">
+        <span class="k">Página</span>
+        <span class="t">E a Economia?</span>
+        <span class="d">Indicadores dos governos brasileiros lado a lado, com contexto.</span>
+        <span class="ir">Abrir →</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="faixa">
+    <section id="turmas" class="w" aria-labelledby="t-turmas">
+      <div class="turmas-cab">
+        <div class="txt">
+          <p class="kick">Formação · Facilitação Antichatice</p>
+          <h2 id="t-turmas">Área das turmas</h2>
+          <p class="d">Todos os decks num só lugar. Digite a senha da sua turma e entre direto na página dela.</p>
+        </div>
+        <a class="btn" href="https://ad-decks.pages.dev/turmas/"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Entrar com a senha da turma</a>
+      </div>
+      <div class="lista">
+        <a class="turma" href="https://ad-decks.pages.dev/apsen/"><span class="c">Apsen</span><span class="t">Formação de Multiplicadores</span><span class="d">4 encontros · out–nov 2026</span><span class="ir">Entrar →</span></a>
+        <a class="turma" href="https://ad-decks.pages.dev/usiminas/"><span class="c">Usiminas · Minds</span><span class="t">Global Trainee Program</span><span class="d">Discovery, Storytelling e Design</span><span class="ir">Entrar →</span></a>
+        <a class="turma" href="https://ad-decks.pages.dev/febraeda-multiplicadores/"><span class="c">FEBRAEDA 2026 · ESPRO</span><span class="t">Formação de Multiplicadores Antichatice</span><span class="ir">Entrar →</span></a>
+        <a class="turma" href="https://ad-decks.pages.dev/hsm-mais-2026/"><span class="c">HSM+ 2026</span><span class="t">Contexto + IA para ampliar a cognição humana</span><span class="ir">Entrar →</span></a>
+        <a class="turma" href="https://ad-decks.pages.dev/pitch-globo/"><span class="c">Globo</span><span class="t">Pitch: da ideia do grupo à banca</span><span class="ir">Entrar →</span></a>
+      </div>
+      <a class="painel" href="https://ad-decks.pages.dev/painel/"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Painel do facilitador</a>
+    </section>
+  </div>
+
+  <section id="breve" class="w" aria-labelledby="t-breve">
+    <h2 id="t-breve">Outras conversas, em breve</h2>
+    <div class="breve">
+      <div><b>Sujeito Íntegro</b><span>Podcast</span></div>
+      <div><b>Afluentes</b><span>Coletivo de aprendizagem entre pares</span></div>
+      <div><b>Facilitação Antichatice</b><span>Materiais abertos do método</span></div>
+    </div>
+  </section>
 </main>
-<footer>Conteúdo sob licença <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" rel="noopener noreferrer">CC BY 4.0</a>. Visitas contadas de forma anônima, sem cookies, com o <a href="https://www.goatcounter.com/" rel="noopener noreferrer">GoatCounter</a>.</footer>
+
+<footer id="sobre">
+  <div class="w">
+    <span>Destrava Conversas é um projeto de Ces Michelin · <a href="https://aprenderdestrava.com.br">Aprender Destrava</a></span>
+    <span>Conteúdo sob licença <a href="https://creativecommons.org/licenses/by/4.0/deed.pt-br" rel="noopener noreferrer">CC BY 4.0</a>. Visitas contadas de forma anônima, sem cookies, com o <a href="https://www.goatcounter.com/" rel="noopener noreferrer">GoatCounter</a>.</span>
+  </div>
+</footer>
 <script data-goatcounter="https://destrava-conversas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
