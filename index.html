@@ -39,7 +39,7 @@ h2{margin:0;font-weight:800;font-size:34px;letter-spacing:-.015em}
 .cab{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline;justify-content:space-between}
 .selo{font-weight:700;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--amarelo);color:#191919}
 section{display:flex;flex-direction:column;gap:28px}
-#conversas{padding-top:24px;padding-bottom:72px}
+#publicas{padding-top:24px;padding-bottom:72px}
 .pub{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 .cartao{text-decoration:none;border-radius:22px;padding:30px;display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .15s ease}
 .cartao:hover{transform:translateY(-2px)}
@@ -103,7 +103,7 @@ footer .lic{margin:0;flex-basis:100%}
 <header class="w">
   <a href="/" aria-label="Destrava Conversas, início"><img src="/assets/dc-logo.png" alt="Destrava Conversas" width="72" height="72"></a>
   <nav aria-label="Seções">
-    <a href="#conversas">Conversas públicas</a>
+    <a href="#publicas">Conversas públicas</a>
     <a href="#turmas">Área das turmas</a>
   </nav>
 </header>
@@ -117,7 +117,7 @@ footer .lic{margin:0;flex-basis:100%}
     </div>
   </div>
 
-  <section id="conversas" class="w" aria-labelledby="t-publicas">
+  <section id="publicas" class="w" aria-labelledby="t-publicas">
     <div class="cab"><h2 id="t-publicas">Conversas públicas</h2><span class="selo">Acesso aberto</span></div>
     <div class="pub">
       <a class="cartao destaque" href="/observatoriodireitaradical/">
@@ -180,6 +180,6 @@ footer .lic{margin:0;flex-basis:100%}
   </div>
 </footer>
 <script data-goatcounter="https://destrava-conversas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<script>(function(){var m={"conversas":"conversas","conversas-publicas":"conversas","publicas":"conversas","turmas":"turmas","area-das-turmas":"turmas","area":"turmas"};function ir(){var h=location.hash.slice(1);if(!h)return;try{h=decodeURIComponent(h)}catch(e){}h=h.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();var id=m[h];if(!id)return;var el=document.getElementById(id);if(el){if(location.hash.slice(1)!==id)history.replaceState(null,"","#"+id);el.scrollIntoView()}}addEventListener("hashchange",ir);addEventListener("load",ir);})();</script>
+<script>(function(){var m={"publicas":"publicas","conversas":"publicas","conversas-publicas":"publicas","turmas":"turmas","area-das-turmas":"turmas","area":"turmas"};function ir(){var h=location.hash.slice(1);if(!h)return;try{h=decodeURIComponent(h)}catch(e){}h=h.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();var id=m[h];if(!id)return;var el=document.getElementById(id);if(el){if(location.hash.slice(1)!==id)history.replaceState(null,"","#"+id);el.scrollIntoView()}}addEventListener("hashchange",ir);addEventListener("load",ir);})();</script>
 </body>
 </html>
