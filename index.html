@@ -60,13 +60,23 @@ section{display:flex;flex-direction:column;gap:28px}
 .acesso{display:flex;flex-wrap:wrap;gap:40px;align-items:center;justify-content:space-between}
 .acesso .txt{flex:1 1 380px;display:flex;flex-direction:column;gap:10px}
 .acesso p.d{margin:0;font-size:17px;line-height:1.5;color:var(--muted);max-width:52ch}
-.caixa{flex:1 1 420px;max-width:540px;background:var(--bg);border:1.5px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.caixa{flex:1 1 420px;min-width:0;max-width:540px;box-sizing:border-box;background:var(--bg);border:1.5px solid var(--line);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px}
 .caixa label{font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amarelo)}
 .caixa .linha{display:flex;flex-wrap:wrap;gap:10px}
-.caixa input{flex:1 1 200px;min-width:0;font:inherit;font-size:17px;color:var(--ink);background:var(--bg2);border:1.5px solid #444;border-radius:12px;padding:14px 16px}
+.caixa .campo{flex:1 1 200px;min-width:0;position:relative;display:flex}
+.caixa input{flex:1;min-width:0;font:inherit;font-size:17px;color:var(--ink);background:var(--bg2);border:1.5px solid #444;border-radius:12px;padding:14px 52px 14px 16px}
 .caixa input:focus{outline:none;border-color:var(--amarelo)}
-.caixa button{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:16px;background:var(--violeta);color:#fff;border:0;border-radius:12px;padding:14px 22px;cursor:pointer}
-.caixa button:hover{filter:brightness(1.12)}
+.caixa .entrar{flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;font-size:16px;background:var(--violeta);color:#fff;border:0;border-radius:12px;padding:14px 22px;cursor:pointer}
+.caixa .entrar:hover{filter:brightness(1.12)}
+.caixa .olho{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:40px;height:40px;display:grid;place-items:center;background:none;border:0;border-radius:8px;color:var(--muted2);cursor:pointer}
+.caixa .olho:hover,.caixa .olho:focus-visible{color:var(--amarelo)}
+.caixa .olho svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.caixa .olho .i-ocultar,.caixa .olho[aria-pressed="true"] .i-ver{display:none}
+.caixa .olho[aria-pressed="true"] .i-ocultar{display:block}
+.caixa .painel{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding-top:14px;border-top:1px solid var(--line);width:100%;text-decoration:none;font-size:13px;font-weight:600;color:var(--muted2)}
+.caixa .painel:hover{color:var(--amarelo)}
+.acesso p.d2{margin:0;font-size:15px;line-height:1.55;color:var(--muted2);max-width:52ch}
+.acesso p.d2 a{color:var(--lilas)}
 .caixa .ajuda{margin:4px 0 0;font-size:14px;line-height:1.55;color:var(--muted2)}
 .caixa .ajuda a{color:var(--lilas)}
 #breve{padding-top:64px;padding-bottom:64px;gap:22px}
@@ -130,16 +140,22 @@ footer .lic{margin:0;flex-basis:100%}
       <div class="acesso">
         <div class="txt">
           <h2 id="t-turmas">Área das turmas</h2>
-          <p class="d">Decks, materiais e painéis de cada turma. Digite a senha que você recebeu e entre direto no que é seu.</p>
+          <p class="d">Aqui ficam os materiais usados nos nossos treinamentos, palestras e formações. Digite a senha que você recebeu e entre direto no que é seu.</p>
+          <p class="d2">Participou de uma dessas experiências e ainda não tem senha? É só pedir: fale com a gente pelo <a href="https://www.instagram.com/aprender.destrava/" target="_blank" rel="noopener noreferrer">Instagram</a> ou pelo <a href="https://www.aprenderdestrava.com.br" target="_blank" rel="noopener noreferrer">site</a>, dizendo seu nome e de qual encontro participou.</p>
         </div>
         <form class="caixa" method="post" action="https://ad-decks.pages.dev/turmas/" target="_blank">
           <label for="senha-turma">Senha de acesso</label>
           <div class="linha">
-            <input id="senha-turma" name="senha" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required placeholder="Digite sua senha">
-            <button type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Entrar</button>
+            <div class="campo">
+              <input id="senha-turma" name="senha" type="password" autocomplete="current-password" autocapitalize="none" autocorrect="off" spellcheck="false" required placeholder="Digite sua senha">
+              <button type="button" class="olho" id="olho" aria-label="Mostrar senha" aria-pressed="false" aria-controls="senha-turma"><svg class="i-ver" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="i-ocultar" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.6 5.1A10 10 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.2 4.1M6.6 6.6A17 17 0 0 0 2 12s3.6 7 10 7a9.6 9.6 0 0 0 5.4-1.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button>
+            </div>
+            <button type="submit" class="entrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Entrar</button>
           </div>
-          <p class="ajuda">Perdeu ou não recebeu sua senha? Fale com a gente pelo <a href="https://www.instagram.com/aprender.destrava/" target="_blank" rel="noopener noreferrer">Instagram @aprender.destrava</a> ou pelo site <a href="https://www.aprenderdestrava.com.br" target="_blank" rel="noopener noreferrer">aprenderdestrava.com.br</a>, dizendo seu nome e a turma.</p>
+          <p class="ajuda">Perdeu sua senha? Fale com a gente pelo <a href="https://www.instagram.com/aprender.destrava/" target="_blank" rel="noopener noreferrer">Instagram @aprender.destrava</a> ou pelo site <a href="https://www.aprenderdestrava.com.br" target="_blank" rel="noopener noreferrer">aprenderdestrava.com.br</a>.</p>
+          <a class="painel" href="https://ad-decks.pages.dev/painel/" target="_blank" rel="noopener noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Painel do facilitador</a>
         </form>
+        <script>(function(){var i=document.getElementById("senha-turma"),b=document.getElementById("olho");if(!i||!b)return;b.addEventListener("click",function(){var v=i.type==="password";i.type=v?"text":"password";b.setAttribute("aria-pressed",v);b.setAttribute("aria-label",v?"Ocultar senha":"Mostrar senha");i.focus();});})();</script>
       </div>
     </section>
   </div>
