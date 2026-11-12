@@ -219,6 +219,6 @@ footer .lic{margin:0;flex-basis:100%}
 <script>(function(){var cs=document.querySelectorAll('.cli'),sel=document.querySelector('.sel'),inp=document.getElementById('senha-turma'),cx=document.querySelector('.grade .caixa');
 cs.forEach(function(c){c.addEventListener('click',function(){cs.forEach(function(o){o.classList.toggle('on',o===c)});sel.hidden=false;sel.querySelector('.sel-lg').innerHTML=c.querySelector('.lg').innerHTML;sel.querySelector('.sel-n').textContent=c.dataset.nome;
  if(window.matchMedia('(max-width:900px)').matches)cx.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){inp.focus({preventScroll:true})},300);});});
-sel.querySelector('.sel-x').addEventListener('click',function(){sel.hidden=true;cs.forEach(function(o){o.classList.remove('on')});});})();</script>
+sel.querySelector('.sel-x').addEventListener('click',function(e){e.preventDefault();var ant=document.querySelector('.cli.on')||cs[0];sel.hidden=true;cs.forEach(function(o){o.classList.remove('on')});var g=document.querySelector('.clis');g.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){ant.focus({preventScroll:true})},350);});})();</script>
 </body>
 </html>
