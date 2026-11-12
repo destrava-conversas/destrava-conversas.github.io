@@ -220,5 +220,6 @@ footer .lic{margin:0;flex-basis:100%}
 cs.forEach(function(c){c.addEventListener('click',function(){cs.forEach(function(o){o.classList.toggle('on',o===c)});sel.hidden=false;sel.querySelector('.sel-lg').innerHTML=c.querySelector('.lg').innerHTML;sel.querySelector('.sel-n').textContent=c.dataset.nome;
  if(window.matchMedia('(max-width:900px)').matches)cx.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){inp.focus({preventScroll:true})},300);});});
 sel.querySelector('.sel-x').addEventListener('click',function(e){e.preventDefault();var ant=document.querySelector('.cli.on')||cs[0];sel.hidden=true;cs.forEach(function(o){o.classList.remove('on')});var g=document.querySelector('.clis');g.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(function(){ant.focus({preventScroll:true})},350);});})();</script>
+<script>(function(){var i=document.getElementById("senha-turma"),b=document.getElementById("olho");if(!i||!b)return;b.addEventListener("click",function(){var v=i.type==="password";i.type=v?"text":"password";b.setAttribute("aria-pressed",v);b.setAttribute("aria-label",v?"Ocultar senha":"Mostrar senha");i.focus();});})();</script>
 </body>
 </html>
